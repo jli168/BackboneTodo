@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Backbone.js To Do List</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- To do app -->
+	<section class="todoapp">
+		<header class="header">
+			<h1> To Do </h1>
+			<input class="new-todo" placeholder="what needs to be done?" autofocus>
+		</header>
+
+		<section class="main">
+			<input class="toggle-all" id="toggle-all" type="checkbox">
+			<label for="toggle-all"> Mark all as complete </label>
+			<ul id="todo-list">
+			</ul>
+		</section>
+
+		<footer class="footer">
+			<p>Double-click to edit a todo</p>
+		</footer>
+	</section>
+
+	<!-- templates -->
+	<script type="text/template" id="item-template">
+		<div class="view">
+			<input class="toggle" type="checkbox" <%= completed ? "checked" : "" %> >
+			<label><%- title %></label>
+			<a class="destroy"></a>
+		</div>
+		<input class="edit" type="text" value="<%- title %>">
+	</script>
+
+	<!-- include require.js -->
+	<script src="vendor/require.js" data-main="js/main"></script>
+</body>
+</html>
