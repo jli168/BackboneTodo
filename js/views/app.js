@@ -11,6 +11,7 @@ define([
 
 		events: {
 			"keypress .new-todo": "createOnEnter"
+			
 		},
 
 		initialize: function(){
@@ -36,6 +37,8 @@ define([
 
 			this.$el.append(todoView.render().el);
 		}
+
+
 	});
 
 	return AppView;
