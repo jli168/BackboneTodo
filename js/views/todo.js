@@ -13,7 +13,8 @@ define([
 		events: {
 			"dblclick .view": "edit",
 			"keypress .edit": "updateOnEnter",
-			"click .destroy": "clear"
+			"click .destroy": "clear",
+			"click .toggle": "toggle"
 		},
 
 		initialize: function(){
@@ -23,6 +24,7 @@ define([
 
 		render: function(){
 			this.$el.html(this.template(this.model.toJSON()));
+			this.$el.toggleClass("done", this.model.get("completed"));
 
 			return this;
 		},
@@ -49,8 +51,11 @@ define([
 		},
 
 		clear: function(){
-			console.log("removeOne");
 			this.model.destroy();
+		},
+
+		toggle: function(){
+			this.model.toggle();
 		}
 
 	});

@@ -21,10 +21,13 @@
 		</section>
 
 		<footer class="footer">
-			<p>Double-click to edit a todo</p>
 		</footer>
 	</section>
 
+	<div id="instructions">
+		Double-click to edit a todo.
+  	</div>
+  	
 	<!-- templates -->
 	<script type="text/template" id="item-template">
 		<div class="view">
@@ -33,6 +36,13 @@
 			<button class="destroy">X</button>
 		</div>
 		<input class="edit" type="text" value="<%- title %>">
+	</script>
+
+	<script type="text/template" id="stats-template">
+		<% if (completed) { %>
+			<a id="clear-completed">Clear <%= completed %> completed <%= completed == 1 ? 'item' : 'items' %></a>
+		<% } %>
+		<div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
 	</script>
 
 	<!-- include require.js -->

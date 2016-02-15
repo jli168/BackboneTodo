@@ -11,6 +11,13 @@ define([
 
 		localStorage: new Storage("todo-backbone"),
 
+		completed: function(){
+			return this.where({completed: true}).length;
+		},
+
+		remaining: function(){
+			return this.where({completed: false}).length;
+		}
 	});
 
 	// here, return an instance of collection, not prototype!

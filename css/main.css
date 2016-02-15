@@ -71,6 +71,11 @@ input[type="checkbox"] {
     box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
 }
 
+#todo-list{
+	list-style: none;
+	padding-left: 0;
+} 
+
 .main {
 	display: none;
 }
@@ -108,8 +113,35 @@ input[type="checkbox"] {
 	display: none;
 }
 
+.todoapp li.done label{
+	color: #777777;
+    text-decoration: line-through;
+}
 
+.footer {
+	display: none;
+	background: #f4fce8;
+    color: #555555;
+    border-top: 1px grey solid;
+    margin: 0 -20px;
+    padding: 0 20px;
+    line-height: 37px;
+}
 
+#clear-completed {
+	float: right;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.1);
+    line-height: 20px;
+    margin-top: 8px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#instructions {
+	margin: 2px auto;
+    text-align: center;
+}
 
 
 
